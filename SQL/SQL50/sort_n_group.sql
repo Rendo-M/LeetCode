@@ -180,7 +180,8 @@ SELECT  COALESCE(
  
 -- Write a solution to report the customer ids from the Customer table that bought all the products in the Product table.
 
-SELECT DISTINCT customer_id, count(product_key)
+SELECT DISTINCT customer_id
 FROM Customer
 GROUP BY customer_id
-HAVING count(product_key) = SELECT(COUNT(product_key) FROM Product)
+HAVING count(DISTINCT product_key) = (SELECT COUNT(product_key) 
+                                       FROM Product)
