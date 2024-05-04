@@ -227,5 +227,3 @@ WHERE income > 50000
 SELECT   'Average Salary' as category, COUNT(account_id) as accounts_count 
 FROM Accounts
 WHERE income BETWEEN 20000 AND 50000 
-
-
